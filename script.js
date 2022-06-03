@@ -1,6 +1,7 @@
-var main = function (input) {
-  return game(input);
-};
+var player = 0;
+var comPlayer = 0;
+var draw = 0;
+var username = ``;
 
 // random number generator
 var randomNum = function( max ){
@@ -24,12 +25,18 @@ var comOutput = function(){
 
 var gameOutcome = function( player , com ){
   if ( player == com ){
+    draw += 1;
     return 'Draw!' ;
   }
   if (( player == 'stone' && com == 'scissors') || ( player == 'scissors' && com == 'paper' ) || ( player == 'paper' && com == 'stone' )){
+    player += 1;
     return 'You Win!' ;
   }
-  return 'You Lose!' ;
+  else{
+    comPlayer += 1 ;
+    return "You Lose!";
+  }
+  
 }
 
 var validityCheck = function ( input ){
@@ -47,3 +54,7 @@ var game = function( input ){
   var com = comOutput() ;
   return `Computer chose ${com} <br><br> You chose ${input} <br></br> ${gameOutcome( input , com )} <br><br> ${REPLAY_INSTRUCTIONS}` ; 
 }
+
+var main = function (input) {
+  return game(input);
+};
