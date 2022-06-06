@@ -64,6 +64,10 @@ var game = function (input) {
   var outcome = 0;
   if (begin == false) {
     username = "";
+    playerChoice = 0;
+    comPlayer = 0;
+    draw = 0;
+    total = 0;
   }
   if (username == ``) {
     username = input;
