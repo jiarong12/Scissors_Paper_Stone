@@ -5,6 +5,7 @@ var username = ``;
 var option = 0;
 var total = 0;
 var startGame = false;
+var begin = false;
 
 var showStats = function () {
   var playerStats = (playerChoice * 100) / total;
@@ -61,10 +62,15 @@ var validityCheck = function (input) {
 
 var game = function (input) {
   var outcome = 0;
+  if (begin == false) {
+    username = "";
+  }
   if (username == ``) {
     username = input;
+    begin = true;
     return `Hi ${username} ! Please press 1 for normal Scissors Paper Stone or 2 for Reversed Scissors Paper Stone`;
   }
+
   if (input == 1 || input == 2) {
     startGame = true;
     option = input;
@@ -116,6 +122,7 @@ var main = function (input) {
   if (input != "q") {
     return game(input);
   } else {
-    return `Thank you for playing!<br><br> This is your win-loss record! <br><br> ${showStats()}`;
+    begin = false;
+    return `Thank you for playing!<br><br> This is your win-loss record! <br><br> ${showStats()}<br><br> Enter your name to play a new round!`;
   }
 };
