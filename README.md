@@ -1,4 +1,4 @@
-# Scissors_Paper_Stone 1st Project
+# Rocket Academy 1st Project (Scissors_Paper_Stone)
 
 
 Q: How many hours did you spend on this assignment?:
